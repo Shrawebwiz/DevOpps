@@ -2,16 +2,10 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.8.1' // or the name you configured in Jenkins
+        maven 'Maven 3.8.1'
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Shrawebwiz/DevOpps.git'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'mvn clean install'
